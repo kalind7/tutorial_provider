@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../screens/tabbar_screens/screen1.dart';
+import '../screens/tabbar_screens/screen2.dart';
 
 class HomeProvider extends ChangeNotifier {
   final List<Widget> tabs = [
@@ -9,10 +10,7 @@ class HomeProvider extends ChangeNotifier {
     const Text('Tab 2'),
   ];
 
-  final List<Widget> tabScreens = [
-    const TabScreenOne(),
-    const Text('Screen of Tab 2'),
-  ];
+  final List<Widget> tabScreens = [const TabScreenOne(), TabbarScreenTwo()];
 
   ImagePicker picker = ImagePicker();
   XFile? pickedFile;

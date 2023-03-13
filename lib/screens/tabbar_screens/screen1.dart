@@ -88,9 +88,7 @@ class TabScreenOne extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailPage(
-                                        postModel: postDatas,
-                                      )));
+                                  builder: (context) => const DetailPage()));
                         },
                         child: Container(
                           margin: const EdgeInsets.all(15),

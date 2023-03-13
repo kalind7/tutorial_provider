@@ -9,6 +9,13 @@ class ApiProvider extends ChangeNotifier {
 
   PostDetailModel? postDetailModel;
 
+  bool isLoading = false;
+
+  toggleLoading(bool newLoading) {
+    isLoading = !newLoading;
+    notifyListeners();
+  }
+
   //to return datas from api.
   Future fetchData() async {
     var allPostData = await Apis.getApiDatas();
@@ -28,6 +35,12 @@ class ApiProvider extends ChangeNotifier {
 
   init() {
     fetchData();
-    fetchDetailModel();
+    // fetchDetailModel();
   }
+
+  // Future fetchPostData(Map<String, dynamic> datas) async {
+  //   toggleLoading(true);
+  //   var postData = await Apis.postServerDatas(datas);
+  //   toggleLoading(false);
+  // }
 }

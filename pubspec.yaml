@@ -20,6 +20,7 @@ dependencies:
   # IMAGES
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.2.3
+  bot_toast: ^4.0.3
 
   # OTHERS
   
