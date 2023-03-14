@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Consumer<HomeProvider>(builder: (context, homeProv, child) {
         return Scaffold(
             appBar: AppBar(

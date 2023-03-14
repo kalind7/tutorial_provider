@@ -3,14 +3,23 @@ import 'package:image_picker/image_picker.dart';
 
 import '../screens/tabbar_screens/screen1.dart';
 import '../screens/tabbar_screens/screen2.dart';
+import '../screens/tabbar_screens/screen3.dart';
+// import '../screens/tabbar_screens/screen3.dart';
 
 class HomeProvider extends ChangeNotifier {
   final List<Widget> tabs = [
     const Text('Tab 1'),
     const Text('Tab 2'),
+    const Text('Tab 3'),
+    // const Text('Offline database')
   ];
 
-  final List<Widget> tabScreens = [const TabScreenOne(), TabbarScreenTwo()];
+  final List<Widget> tabScreens = [
+    const TabScreenOne(),
+    TabbarScreenTwo(),
+    TabScreenThree()
+    // const Text('data 3')
+  ];
 
   ImagePicker picker = ImagePicker();
   XFile? pickedFile;

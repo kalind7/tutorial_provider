@@ -24,49 +24,52 @@ class TabScreenOne extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            Stack(
-              alignment: AlignmentDirectional.bottomEnd,
-              children: [
-                homeProv.pickedFile?.path == null
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: CachedNetworkImage(
-                          height: 200,
-                          width: 200,
-                          fit: BoxFit.cover,
-                          imageUrl:
-                              'https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+            Center(
+              child: Stack(
+                alignment: AlignmentDirectional.bottomEnd,
+                children: [
+                  homeProv.pickedFile?.path == null
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: CachedNetworkImage(
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                            imageUrl:
+                                'https://images.unsplash.com/photo-1617040619263-41c5a9ca7521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image.file(
+                            File(homeProv.pickedFile!.path),
+                            height: 200,
+                            width: 200,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      )
-                    : ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Image.file(
-                          File(homeProv.pickedFile!.path),
-                          height: 200,
-                          width: 200,
-                          fit: BoxFit.cover,
+                  Positioned(
+                    right: 20,
+                    bottom: 30,
+                    child: InkWell(
+                      onTap: () {
+                        homeProv.imagePick(context);
+                      },
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade300,
+                            shape: BoxShape.circle),
+                        child: const Icon(
+                          Icons.edit,
+                          color: Colors.black,
                         ),
-                      ),
-                Positioned(
-                  right: 20,
-                  bottom: 30,
-                  child: InkWell(
-                    onTap: () {
-                      homeProv.imagePick(context);
-                    },
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: Colors.grey.shade300, shape: BoxShape.circle),
-                      child: const Icon(
-                        Icons.edit,
-                        color: Colors.black,
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 20,
